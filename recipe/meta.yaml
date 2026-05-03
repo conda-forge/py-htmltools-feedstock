@@ -10,17 +10,17 @@ source:
   sha256: 3dc4505b5134055cb10be251f8f17431bcdad9f5de11667f53a1405aec221f38
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
     - setuptools
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - packaging >=20.9
     - typing-extensions >=3.10.0.0
 
@@ -31,6 +31,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/posit-dev/py-htmltools
