@@ -22,7 +22,7 @@ requirements:
   run:
     - python >={{ python_min }}
     - packaging >=20.9
-    - typing-extensions >=3.10.0.0
+    - typing-extensions >=4.12.0
 
 test:
   imports:
